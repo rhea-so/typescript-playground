@@ -1,20 +1,21 @@
-// Node.js: Launch Program with nodemon and typescript
 {
   "version": "0.2.0",
   "configurations": [
     {
       "type": "node",
       "request": "launch",
-      "restart": true,
-      "name": "nodemon",
-      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/nodemon",
+      "name": "Launch Program",
       "program": "${workspaceFolder}/src/index.ts",
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
-      "env": {
-        "NODE_ENV": "development"
+      "preLaunchTask": {
+        "type": "typescript",
+        "tsconfig": "tsconfig.json",
+        "option": "watch"
       },
-      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/nodemon",
+      "restart": true,
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
     }
   ]
 }
