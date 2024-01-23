@@ -4,7 +4,7 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Program",
+      "name": "Launch Program (nodemon src/index.ts)",
       "program": "${workspaceFolder}/src/index.ts",
       "preLaunchTask": {
         "type": "typescript",
@@ -13,6 +13,16 @@
       },
       "outFiles": ["${workspaceFolder}/dist/**/*.js"],
       "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/nodemon",
+      "restart": true,
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      // node dist/index.js without typescript
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program (node dist/index.js)",
+      "program": "${workspaceFolder}/dist/index.js",
       "restart": true,
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
